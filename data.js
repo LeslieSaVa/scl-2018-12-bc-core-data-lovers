@@ -13,6 +13,9 @@ window.pokemones = {
 
   filterData: (data,condition) => {
   const dataPokemon = data;
+  if(condition === ""){
+    return data;
+  }
   const pokemonResultFilter = dataPokemon.filter(pokemon => {
     return pokemon.type.indexOf(condition) !== -1 ;
   })

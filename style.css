@@ -389,3 +389,7 @@ span.card-title{
         font-size: 2.5rem;
     }
 }
+#chart-container{
+    width: 80%;
+    height: 80%;
+}
