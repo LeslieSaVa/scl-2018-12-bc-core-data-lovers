@@ -26,11 +26,11 @@ document.getElementById("contact-btn-responsive").addEventListener("click",()=>{
 })  
 //Manejo del cálculo 
 document.getElementById("select-type-pokemon").addEventListener("change", () => {
-  document.getElementById("result-sum").innerHTML = "";
   let type = document.getElementById("select-type-pokemon").value;
   document.getElementById("result-sum").innerHTML = `
-  <h5>Existen ${window.pokemones.computeStats(allPokemon.pokemon,type)} pokemones del tipo ${type} en la región de Kanto</h5>`;
-
+  <h5>Existen ${window.pokemones.computeStats(allPokemon.pokemon,type)} pokemones del tipo ${type} en la región de Kanto</h5>
+  <div id="chart-container"><canvas id="myChart"></canvas></div>`;
+  //upDateChart(window.pokemones.filterData(allPokemon.pokemon,type));
   });
  
 let allPokemon;
@@ -165,9 +165,10 @@ document.getElementById("select-type-pokemon").addEventListener("change",(evento
   //Manejo de la función ordenar
   document.getElementById("option-order").addEventListener("change", () => {
     document.getElementById("result-sum").innerHTML = "";
+    let type = document.getElementById("select-type-pokemon").value;
     content.innerHTML = "";
     if (document.getElementById("option-order").value === "az" || document.getElementById("option-order").value === "za"){
-        for (let valor of window.pokemones.sortData(allPokemon.pokemon,"name",document.getElementById("option-order").value)){
+        for (let valor of window.pokemones.sortData(window.pokemones.filterData(allPokemon.pokemon,type),"name",document.getElementById("option-order").value)){
           content.innerHTML +=`
             <div class="col s6 m3">
               <div id="card1" class="card">
@@ -240,4 +241,63 @@ document.getElementById("contact-form").style.display="block";
  }
  window.onload = runData;
 
+//Gráfico número de pokemones por tipo
+function upDateChart (data) {
+  let myChart = document.getElementById("myChart").getContext("2d");
+  //Global Options
+  window.Chart.defaults.global.defaultFontFamily = "Lato";
+  window.Chart.defaults.global.defaultFontSize = 18;
+  window.Chart.defaults.global.defaultFontColor = "#777";
   
+  let chart = new window.Chart(myChart, {
+      type: 'pie',
+      data: {
+          datasets: [{
+              label: "Total Pokemones",
+              data : [data.length, 151 - data.length],
+              backgroundColor:[
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+              ],
+              borderWidth:1,
+              borderColor: "#777",
+              hoverBorderWidth:3,
+          }
+        ],
+          labels: [
+            document.getElementById("select-type-pokemon").value,
+            "Otros",
+          ] 
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Tipos de Pokemon"
+        },
+        responsive: true, 
+      }
+  });
+  window.chart.update();
+};
+
+ //let dataWeaknesses;
+ //fetch("https://pokeapi.co/api/v2/type/")
+  //.then(newData => newData.json() )
+  //.then(newData => {
+    //  console.log(newData)
+      //dataWeaknesses = newData;
+//})  
+//document.getElementById("probando").addEventListener("click", ()=>{
+  //showPokemons1(dataWeaknesses);
+//})
+//function showPokemons1(newData){
+  //content.innerHTML="";
+    //if (Array.isArray(dataWeaknesses)){
+      //for (let valor of dataWeaknesses){
+        //content1.innerHTML +=`
+          //      <p class="pokenumber">Nº ${valor.url}</p>
+            //    <p class="card-title ">${valor.name}</p>`
+    //}
+    //}
+//}
+
