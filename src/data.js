@@ -71,3 +71,14 @@ sortData: (data, sortBy, sortOrder) => {
   return dataPokemon
  }
 }
+
+window.api = {
+
+  filterData: (data) => {
+    const dataPokemon = data;
+    const langFilter = dataPokemon.filter(entries => {
+      return entries.language.name === "es" ;
+    })
+    return langFilter 
+   },
+}

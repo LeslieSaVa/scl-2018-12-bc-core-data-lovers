@@ -30,7 +30,7 @@ document.getElementById("select-type-pokemon").addEventListener("change", () => 
   document.getElementById("result-sum").innerHTML = `
   <h5>Existen ${window.pokemones.computeStats(allPokemon.pokemon,type)} pokemones del tipo ${type} en la región de Kanto</h5>
   <div id="chart-container"><canvas id="myChart"></canvas></div>`;
-  //upDateChart(window.pokemones.filterData(allPokemon.pokemon,type));
+  upDateChart(window.pokemones.filterData(allPokemon.pokemon,type));
   });
  
 let allPokemon;
@@ -45,6 +45,13 @@ let pokemonImages = document.getElementsByClassName("img-pokemon");
 function clickOnImg (data) {
     for (let i = 0; i<pokemonImages.length; i++) {
       pokemonImages[i].addEventListener("click",() =>{
+        fetch("https://pokeapi.co/api/v2/pokemon-species/"+data[i].id+"/")
+        .then(newData => newData.json() )
+        .then(newData => {
+          console.log(newData);
+              let element = document.getElementById("textAPI"); 
+               element.innerHTML += `<p>${window.api.filterData(newData.flavor_text_entries)[0].flavor_text}</p>`  
+      })  
         document.getElementById("first-page").style.display="none";
         document.getElementById("second-page").style.display="block";
         document.getElementById("second-page").innerHTML +=`
@@ -76,6 +83,7 @@ function clickOnImg (data) {
               </div>
             </div>
            <div class="col s12 m6" >
+              <div id="textAPI"></div>
               <div class="card-panel teal grey center-align">
                 <span class="white-text" >
                   <table  id="table-info">
@@ -240,7 +248,6 @@ document.getElementById("contact-form").style.display="block";
   })  
  }
  window.onload = runData;
-
 //Gráfico número de pokemones por tipo
 function upDateChart (data) {
   let myChart = document.getElementById("myChart").getContext("2d");
@@ -281,23 +288,7 @@ function upDateChart (data) {
 };
 
  //let dataWeaknesses;
- //fetch("https://pokeapi.co/api/v2/type/")
-  //.then(newData => newData.json() )
-  //.then(newData => {
-    //  console.log(newData)
-      //dataWeaknesses = newData;
-//})  
-//document.getElementById("probando").addEventListener("click", ()=>{
-  //showPokemons1(dataWeaknesses);
-//})
-//function showPokemons1(newData){
-  //content.innerHTML="";
-    //if (Array.isArray(dataWeaknesses)){
-      //for (let valor of dataWeaknesses){
-        //content1.innerHTML +=`
-          //      <p class="pokenumber">Nº ${valor.url}</p>
-            //    <p class="card-title ">${valor.name}</p>`
-    //}
-    //}
-//}
+ 
 
+
+//<a>${newData.results[i].url}</a>
