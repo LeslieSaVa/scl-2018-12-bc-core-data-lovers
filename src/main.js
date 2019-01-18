@@ -45,12 +45,18 @@ let pokemonImages = document.getElementsByClassName("img-pokemon");
 function clickOnImg (data) {
     for (let i = 0; i<pokemonImages.length; i++) {
       pokemonImages[i].addEventListener("click",() =>{
+        //api para el texto de cada pokemon 
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+data[i].id+"/")
         .then(newData => newData.json() )
         .then(newData => {
           console.log(newData);
               let element = document.getElementById("textAPI"); 
+              let element1 = document.getElementById("pokemonSpecies");
+              let element2 = document.getElementById("pokemonHabitat");
+        //esta funcion fiñter corresponde a otro objeto (api) y filtra el idioma 
                element.innerHTML += `<p>${window.api.filterData(newData.flavor_text_entries)[0].flavor_text}</p>`  
+               element1.innerHTML += `<p>${window.api.filterData(newData.genera)[0].genus}</p>`  
+               element2.innerHTML += `<p>${newData.habitat.name}</p>`  
       })  
         document.getElementById("first-page").style.display="none";
         document.getElementById("second-page").style.display="block";
@@ -72,11 +78,18 @@ function clickOnImg (data) {
                 <div id="card-type" class="card-action">
                   <span class="white-text" >
                     <table  id="table-type">
-                       <h5 id="card-title">Tipo</h5>
                         <tr>
-                          <td><div class="${data[i].type[0]}">${data[i].type[0]}</div></td>
-                          <td><div class="${data[i].type[1]}">${data[i].type[1]}</div></td>
+                          <td><p>Especie</p></td>
+                          <td><div id="pokemonSpecies"></div></td>
+                        </tr>  
+                        <tr>
+                          <td><p>Tipo</p></td>
+                          <td><div class="tagsizeOfType ${data[i].type[0]}">${data[i].type[0]}</div> <div class="tagsizeOfType ${data[i].type[1]}">${data[i].type[1]}</div></td>
                         </tr>
+                        <tr>
+                        <td><p>Habitat</p></td>
+                        <td><div id="pokemonHabitat"></div></td>
+                      </tr>
                     </table> 
                   </span>   
                 </div>
@@ -113,16 +126,16 @@ function clickOnImg (data) {
                   <table id="table-weaknesses">
                     <h5>Debilidades</h5>               
                    <tr>
-                     <td ><div class="${data[i].weaknesses[0]}">${data[i].weaknesses[0]}</div> </td>
-                     <td ><div class="${data[i].weaknesses[1]}">${data[i].weaknesses[1]}</div> </td>
+                     <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[0]}">${data[i].weaknesses[0]}</div> </td>
+                     <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[1]}">${data[i].weaknesses[1]}</div> </td>
                    </tr>
                    <tr>
-                      <td ><div class="${data[i].weaknesses[2]}">${data[i].weaknesses[2]}</div> </td>
-                      <td ><div class="${data[i].weaknesses[3]}">${data[i].weaknesses[3]}</div> </td>
+                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[2]}">${data[i].weaknesses[2]}</div> </td>
+                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[3]}">${data[i].weaknesses[3]}</div> </td>
                    </tr>
                    <tr>
-                      <td ><div class="${data[i].weaknesses[4]}">${data[i].weaknesses[4]}</div> </td>
-                      <td ><div class="${data[i].weaknesses[5]}">${data[i].weaknesses[5]}</div> </td>
+                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[4]}">${data[i].weaknesses[4]}</div> </td>
+                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[5]}">${data[i].weaknesses[5]}</div> </td>
                   </tr>
                  </table>
                 </span>
@@ -155,7 +168,7 @@ document.getElementById("select-type-pokemon").addEventListener("change",(evento
           content.innerHTML +=`
             <div class="col s6 m3">
               <div id="card1" class="card">
-                <div  id="images" class="card-image responsive-img">
+                <div  id="images" class="card-image responsive-img"> 
                   <img class="img-pokemon responsive-img" src= "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${valor.num}.png">
                 </div>
                 <div class="card-content">
@@ -287,8 +300,30 @@ function upDateChart (data) {
   window.chart.update();
 };
 
- //let dataWeaknesses;
- 
-
-
 //<a>${newData.results[i].url}</a>
+//Buscador 
+document.addEventListener("DOMContentLoaded", function(){
+  let options = {
+    data: {
+    },
+    onAutocomplete: function(texto){
+      showPokemons(window.pokemones.searchPoke(allPokemon.pokemon, texto));
+      clickOnImg(window.pokemones.searchPoke(allPokemon.pokemon, texto));
+    }
+  }
+  let allPokemon;
+  fetch ("data/pokemon/pokemon.json")
+  .then(data => data.json())
+  .then(data => {
+    allPokemon = data;
+    fullDataName(data);
+   })
+  function fullDataName (allPokemon){
+  for (let i=0; i< allPokemon.pokemon.length; i++){
+    let pokemonName = allPokemon.pokemon[i].name;
+    options.data[pokemonName]=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${allPokemon.pokemon[i].id}.png`;
+  }
+}
+   let elems = document.querySelectorAll(".autocomplete");
+      M.Autocomplete.init(elems,options); 
+});

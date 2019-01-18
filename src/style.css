@@ -113,6 +113,16 @@ body{
 span.card-title{
     margin-bottom: 0;
 }
+/*tagsize de las tarjetas de tipo bajo la imagen*/
+.tagsizeOfType{
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 2%;
+}
+.tagsizeOfWeaknesses{
+    width: 70%;
+    margin-left: 25%;
+}
 .Fire{
     background-color: #ffa726 ;
     border: 2px solid #ff9800; 
@@ -392,4 +402,12 @@ span.card-title{
 #chart-container{
     width: 80%;
     height: 80%;
+}
+#textAPI{
+    font-size: 110%;
+    padding-bottom: 3%;
+    padding-top: 1%;
+}
+.input-field{
+    margin: 0;
 }

@@ -1,4 +1,5 @@
 window.pokemones = {
+
 //Lo oficial de aqui hacia abajo 
   computeStats: (data,type) =>{
     const dataPokemon = data;
@@ -9,6 +10,13 @@ window.pokemones = {
       }
     })
     return sum 
+  },
+  searchPoke: (data, searching) => {
+    let foundData = data;
+    foundData = foundData.filter(pokemon => {
+      return (pokemon.name.toLowerCase().indexOf(searching.toLowerCase()) !== -1);
+    })
+    return foundData;
   },
 
   filterData: (data,condition) => {
@@ -81,4 +89,6 @@ window.api = {
     })
     return langFilter 
    },
+
+   
 }
