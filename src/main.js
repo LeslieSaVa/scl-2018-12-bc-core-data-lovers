@@ -126,17 +126,14 @@ function clickOnImg (data) {
                   <table id="table-weaknesses">
                     <h5>Debilidades</h5>               
                    <tr>
-                     <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[0]}">${data[i].weaknesses[0]}</div> </td>
-                     <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[1]}">${data[i].weaknesses[1]}</div> </td>
+                     <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[0]}">${data[i].weaknesses[0]}</div> 
+                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[1]}">${data[i].weaknesses[1]}</div> 
+                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[2]}">${data[i].weaknesses[2]}</div>
+                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[3]}">${data[i].weaknesses[3]}</div> 
+                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[4]}">${data[i].weaknesses[4]}</div> 
+                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[5]}">${data[i].weaknesses[5]}</div>
+                     </td>
                    </tr>
-                   <tr>
-                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[2]}">${data[i].weaknesses[2]}</div> </td>
-                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[3]}">${data[i].weaknesses[3]}</div> </td>
-                   </tr>
-                   <tr>
-                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[4]}">${data[i].weaknesses[4]}</div> </td>
-                      <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[5]}">${data[i].weaknesses[5]}</div> </td>
-                  </tr>
                  </table>
                 </span>
               </div>
@@ -299,7 +296,6 @@ function upDateChart (data) {
   });
   window.chart.update();
 };
-
 //<a>${newData.results[i].url}</a>
 //Buscador 
 document.addEventListener("DOMContentLoaded", function(){
