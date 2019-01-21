@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:5500/src/index.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>PokePedia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="./PokePedia_files/icon" rel="stylesheet">
+    <link rel="stylesheet" href="./PokePedia_files/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="./PokePedia_files/materialize.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:5500/src/IMG/favicon.ico">
+    <link rel="stylesheet" href="./PokePedia_files/style(1).css">
+
+<style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><script type="text/javascript" src="./PokePedia_files/handler.js"></script><script type="text/javascript" src="./PokePedia_files/sc.php"></script></head>
+
+<body>
+
+    <nav id="nav-bar">
+        <div class="container nav-wrapper">
+            <a href="http://127.0.0.1:5500/src/index.html#" class="brand-logo">PoKePedia</a>
+            <a href="http://127.0.0.1:5500/src/index.html#" data-target="menu-responsive" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a id="back-to-initial" href="http://127.0.0.1:5500/src/index.html#">Inicio</a>
+                </li>
+                <li><a href="https://pokemongolive.com/es/events/" target="_blank">Eventos</a>
+                </li>
+                <li><a href="http://127.0.0.1:5500/src/index.html#" id="calculator-btn">Calculadora</a>
+                </li>
+                <li><a href="http://127.0.0.1:5500/src/index.html#" id="contact-btn">Contacto</a>
+                </li>
+            </ul>
+            <ul class="sidenav" id="menu-responsive">
+                <li><a id="back-to-initial-responsive" href="http://127.0.0.1:5500/src/index.html#">Inicio</a>
+                </li>
+                <li><a href="https://pokemongolive.com/es/events/">Eventos</a>
+                </li>
+                <li><a id="calculator-btn-responsive" href="http://127.0.0.1:5500/src/index.html#">Calculadora</a>
+                </li>
+                <li><a id="contact-btn-responsive" href="http://127.0.0.1:5500/src/index.html#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="first-page" style="display: none;">
+        <header id="cover-page">
+            <div class=" container overlay ">
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        <h1>La Wiki Pro de PokemonGo</h1>
+                        <h2>En esta página encontrarás información y las características de los 151 pokemones pertenecientes a la región de Kanto</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 offset-s4">
+                        <button id="scroll-btn">Desliza para más!</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="container1" class="container">
+            <div class="row">
+                <div id="select-pokemon" class="col s12 m4">
+                    <div class="select-wrapper"><input class="select-dropdown dropdown-trigger" type="text" readonly="true" data-target="select-options-436264bb-e627-d444-07ec-e0f2fdbdab08"><ul id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab08" class="dropdown-content select-dropdown" tabindex="0"><li class="disabled selected" id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab080" tabindex="0"><span>Elige Tipo de Pokemon</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab081" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Tierra.png"><span>Tierra</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab082" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Agua.png"><span>Agua</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab083" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Fuego.png"><span>Fuego</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab084" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Normal.png"><span>Normal</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab085" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Psíquico.png"><span>Psiquico</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab086" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Dragón.png"><span>Dragón</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab087" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Volador.png"><span>Volador</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab088" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Electrico.png"><span>Eléctrico</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab089" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Hielo.png"><span>Hielo</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0810" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Roca.png"><span>Roca</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0811" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Bug.png"><span>Bicho</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0812" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Planta.png"><span>Planta</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0813" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Veneno.png"><span>Veneno</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0814" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Lucha.png"><span>Lucha</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0815" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Ghost.png"><span>Fantasma</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0816" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Siniestro.png"><span>Siniestro</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0817" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Acero.png"><span>Acero</span></li><li id="select-options-436264bb-e627-d444-07ec-e0f2fdbdab0818" tabindex="0"><img alt="" src="./PokePedia_files/Icon_Hada.png"><span>Hada</span></li></ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><select id="select-type-pokemon" class="icons" tabindex="-1">
+                        <option value="" disabled="" selected="">Elige Tipo de Pokemon</option>
+                        <option value="Ground" data-icon="IMG/Icon_Tierra.png">Tierra</option>
+                        <option value="Water" data-icon="IMG/Icon_Agua.png">Agua</option>
+                        <option value="Fire" data-icon="IMG/Icon_Fuego.png">Fuego</option>
+                        <option value="Normal" data-icon="IMG/Icon_Normal.png">Normal</option>
+                        <option value="Psychic" data-icon="IMG/Icon_Psíquico.png">Psiquico</option>
+                        <option value="Dragon" data-icon="IMG/Icon_Dragón.png">Dragón</option>
+                        <option value="Flying" data-icon="IMG/Icon_Volador.png">Volador</option>
+                        <option value="Electric" data-icon="IMG/Icon_Electrico.png">Eléctrico</option>
+                        <option value="Ice" data-icon="IMG/Icon_Hielo.png">Hielo</option>
+                        <option value="Rock" data-icon="IMG/Icon_Roca.png">Roca</option>
+                        <option value="Bug" data-icon="IMG/Icon_Bug.png">Bicho</option>
+                        <option value="Grass" data-icon="IMG/Icon_Planta.png">Planta</option>
+                        <option value="Poison" data-icon="IMG/Icon_Veneno.png">Veneno</option>
+                        <option value="Fighting" data-icon="IMG/Icon_Lucha.png">Lucha</option>
+                        <option value="Ghost" data-icon="IMG/Icon_Ghost.png">Fantasma</option>
+                        <option value="Dark" data-icon="IMG/Icon_Siniestro.png">Siniestro</option>
+                        <option value="Steel" data-icon="IMG/Icon_Acero.png">Acero</option>
+                        <option value="Fairy" data-icon="IMG/Icon_Hada.png">Hada</option>
+                    </select></div>
+                </div>
+                <div id="select-type-order" class="col s12 m4">
+                    <div class="select-wrapper"><input class="select-dropdown dropdown-trigger" type="text" readonly="true" data-target="select-options-71b2f668-0932-a529-7f15-9a0fa8c3e322"><ul id="select-options-71b2f668-0932-a529-7f15-9a0fa8c3e322" class="dropdown-content select-dropdown" tabindex="0"><li class="disabled selected" id="select-options-71b2f668-0932-a529-7f15-9a0fa8c3e3220" tabindex="0"><span>Ordenar por</span></li><li id="select-options-71b2f668-0932-a529-7f15-9a0fa8c3e3221" tabindex="0"><span>A - Z</span></li><li id="select-options-71b2f668-0932-a529-7f15-9a0fa8c3e3222" tabindex="0"><span>Z - A</span></li><li id="select-options-71b2f668-0932-a529-7f15-9a0fa8c3e3223" tabindex="0"><span>Número inferior</span></li><li id="select-options-71b2f668-0932-a529-7f15-9a0fa8c3e3224" tabindex="0"><span>Número superior</span></li></ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><select id="option-order" tabindex="-1">
+                        <option value="" disabled="" selected="">Ordenar por</option>
+                        <option value="az">A - Z</option>
+                        <option value="za">Z - A</option>
+                        <option value="small-big">Número inferior</option>
+                        <option value="big-small">Número superior</option>
+                    </select></div>
+                </div>
+                <div class="input-field col s6 m4">
+                     <i class="material-icons prefix">search</i>
+                     <input id="search" type="text" class="autocomplete" data-target="autocomplete-options-31c20293-ea99-db23-c03a-4f567baf7c56"><ul id="autocomplete-options-31c20293-ea99-db23-c03a-4f567baf7c56" class="autocomplete-content dropdown-content" tabindex="0"></ul>
+                     <label for="icon_search">Buscar...</label>
+                </div>
+            </div>
+
+            <div id="content" class="row">
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/001.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 001</p>
+                  <span class="card-title ">Bulbasaur</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/002.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 002</p>
+                  <span class="card-title ">Ivysaur</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/003.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 003</p>
+                  <span class="card-title ">Venusaur</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/004.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 004</p>
+                  <span class="card-title ">Charmander</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/005.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 005</p>
+                  <span class="card-title ">Charmeleon</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/006.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 006</p>
+                  <span class="card-title ">Charizard</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/007.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 007</p>
+                  <span class="card-title ">Squirtle</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/008.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 008</p>
+                  <span class="card-title ">Wartortle</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/009.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 009</p>
+                  <span class="card-title ">Blastoise</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/010.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 010</p>
+                  <span class="card-title ">Caterpie</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/011.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 011</p>
+                  <span class="card-title ">Metapod</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/012.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 012</p>
+                  <span class="card-title ">Butterfree</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/013.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 013</p>
+                  <span class="card-title ">Weedle</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/014.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 014</p>
+                  <span class="card-title ">Kakuna</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/015.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 015</p>
+                  <span class="card-title ">Beedrill</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/016.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 016</p>
+                  <span class="card-title ">Pidgey</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/017.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 017</p>
+                  <span class="card-title ">Pidgeotto</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/018.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 018</p>
+                  <span class="card-title ">Pidgeot</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/019.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 019</p>
+                  <span class="card-title ">Rattata</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/020.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 020</p>
+                  <span class="card-title ">Raticate</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/021.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 021</p>
+                  <span class="card-title ">Spearow</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/022.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 022</p>
+                  <span class="card-title ">Fearow</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/023.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 023</p>
+                  <span class="card-title ">Ekans</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/024.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 024</p>
+                  <span class="card-title ">Arbok</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/025.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 025</p>
+                  <span class="card-title ">Pikachu</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/026.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 026</p>
+                  <span class="card-title ">Raichu</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/027.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 027</p>
+                  <span class="card-title ">Sandshrew</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/028.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 028</p>
+                  <span class="card-title ">Sandslash</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/029.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 029</p>
+                  <span class="card-title ">Nidoran ♀ (Female)</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/030.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 030</p>
+                  <span class="card-title ">Nidorina</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/031.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 031</p>
+                  <span class="card-title ">Nidoqueen</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize Ground ">Ground</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/032.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 032</p>
+                  <span class="card-title ">Nidoran ♂ (Male)</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/033.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 033</p>
+                  <span class="card-title ">Nidorino</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/034.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 034</p>
+                  <span class="card-title ">Nidoking</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize Ground ">Ground</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/035.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 035</p>
+                  <span class="card-title ">Clefairy</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/036.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 036</p>
+                  <span class="card-title ">Clefable</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/037.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 037</p>
+                  <span class="card-title ">Vulpix</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/038.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 038</p>
+                  <span class="card-title ">Ninetales</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/039.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 039</p>
+                  <span class="card-title ">Jigglypuff</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/040.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 040</p>
+                  <span class="card-title ">Wigglytuff</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/041.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 041</p>
+                  <span class="card-title ">Zubat</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/042.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 042</p>
+                  <span class="card-title ">Golbat</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/043.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 043</p>
+                  <span class="card-title ">Oddish</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/044.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 044</p>
+                  <span class="card-title ">Gloom</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/045.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 045</p>
+                  <span class="card-title ">Vileplume</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/046.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 046</p>
+                  <span class="card-title ">Paras</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Grass ">Grass</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/047.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 047</p>
+                  <span class="card-title ">Parasect</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Grass ">Grass</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/048.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 048</p>
+                  <span class="card-title ">Venonat</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/049.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 049</p>
+                  <span class="card-title ">Venomoth</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/050.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 050</p>
+                  <span class="card-title ">Diglett</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/051.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 051</p>
+                  <span class="card-title ">Dugtrio</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/052.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 052</p>
+                  <span class="card-title ">Meowth</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/053.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 053</p>
+                  <span class="card-title ">Persian</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/054.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 054</p>
+                  <span class="card-title ">Psyduck</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/055.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 055</p>
+                  <span class="card-title ">Golduck</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/056.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 056</p>
+                  <span class="card-title ">Mankey</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/057.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 057</p>
+                  <span class="card-title ">Primeape</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/058.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 058</p>
+                  <span class="card-title ">Growlithe</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/059.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 059</p>
+                  <span class="card-title ">Arcanine</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/060.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 060</p>
+                  <span class="card-title ">Poliwag</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/061.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 061</p>
+                  <span class="card-title ">Poliwhirl</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/062.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 062</p>
+                  <span class="card-title ">Poliwrath</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/063.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 063</p>
+                  <span class="card-title ">Abra</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/064.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 064</p>
+                  <span class="card-title ">Kadabra</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/065.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 065</p>
+                  <span class="card-title ">Alakazam</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/066.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 066</p>
+                  <span class="card-title ">Machop</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/067.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 067</p>
+                  <span class="card-title ">Machoke</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/068.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 068</p>
+                  <span class="card-title ">Machamp</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/069.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 069</p>
+                  <span class="card-title ">Bellsprout</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/070.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 070</p>
+                  <span class="card-title ">Weepinbell</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/071.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 071</p>
+                  <span class="card-title ">Victreebel</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/072.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 072</p>
+                  <span class="card-title ">Tentacool</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/073.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 073</p>
+                  <span class="card-title ">Tentacruel</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/074.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 074</p>
+                  <span class="card-title ">Geodude</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Ground ">Ground</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/075.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 075</p>
+                  <span class="card-title ">Graveler</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Ground ">Ground</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/076.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 076</p>
+                  <span class="card-title ">Golem</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Ground ">Ground</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/077.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 077</p>
+                  <span class="card-title ">Ponyta</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/078.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 078</p>
+                  <span class="card-title ">Rapidash</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/079.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 079</p>
+                  <span class="card-title ">Slowpoke</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/080.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 080</p>
+                  <span class="card-title ">Slowbro</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/081.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 081</p>
+                  <span class="card-title ">Magnemite</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/082.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 082</p>
+                  <span class="card-title ">Magneton</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/083.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 083</p>
+                  <span class="card-title ">Farfetch'd</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/084.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 084</p>
+                  <span class="card-title ">Doduo</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/085.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 085</p>
+                  <span class="card-title ">Dodrio</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/086.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 086</p>
+                  <span class="card-title ">Seel</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/087.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 087</p>
+                  <span class="card-title ">Dewgong</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Ice ">Ice</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/088.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 088</p>
+                  <span class="card-title ">Grimer</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/089.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 089</p>
+                  <span class="card-title ">Muk</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/090.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 090</p>
+                  <span class="card-title ">Shellder</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/091.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 091</p>
+                  <span class="card-title ">Cloyster</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Ice ">Ice</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/092.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 092</p>
+                  <span class="card-title ">Gastly</span>
+                  <span class="tagsize Ghost ">Ghost</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/093.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 093</p>
+                  <span class="card-title ">Haunter</span>
+                  <span class="tagsize Ghost ">Ghost</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/094.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 094</p>
+                  <span class="card-title ">Gengar</span>
+                  <span class="tagsize Ghost ">Ghost</span>
+                  <span class="tagsize Poison ">Poison</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/095.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 095</p>
+                  <span class="card-title ">Onix</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Ground ">Ground</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/096.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 096</p>
+                  <span class="card-title ">Drowzee</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/097.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 097</p>
+                  <span class="card-title ">Hypno</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/098.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 098</p>
+                  <span class="card-title ">Krabby</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/099.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 099</p>
+                  <span class="card-title ">Kingler</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/100.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 100</p>
+                  <span class="card-title ">Voltorb</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/101.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 101</p>
+                  <span class="card-title ">Electrode</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/102.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 102</p>
+                  <span class="card-title ">Exeggcute</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/103.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 103</p>
+                  <span class="card-title ">Exeggutor</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/104.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 104</p>
+                  <span class="card-title ">Cubone</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/105.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 105</p>
+                  <span class="card-title ">Marowak</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/106.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 106</p>
+                  <span class="card-title ">Hitmonlee</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/107.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 107</p>
+                  <span class="card-title ">Hitmonchan</span>
+                  <span class="tagsize Fighting ">Fighting</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/108.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 108</p>
+                  <span class="card-title ">Lickitung</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/109.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 109</p>
+                  <span class="card-title ">Koffing</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/110.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 110</p>
+                  <span class="card-title ">Weezing</span>
+                  <span class="tagsize Poison ">Poison</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/111.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 111</p>
+                  <span class="card-title ">Rhyhorn</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize Rock ">Rock</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/112.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 112</p>
+                  <span class="card-title ">Rhydon</span>
+                  <span class="tagsize Ground ">Ground</span>
+                  <span class="tagsize Rock ">Rock</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/113.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 113</p>
+                  <span class="card-title ">Chansey</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/114.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 114</p>
+                  <span class="card-title ">Tangela</span>
+                  <span class="tagsize Grass ">Grass</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/115.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 115</p>
+                  <span class="card-title ">Kangaskhan</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/116.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 116</p>
+                  <span class="card-title ">Horsea</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/117.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 117</p>
+                  <span class="card-title ">Seadra</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/118.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 118</p>
+                  <span class="card-title ">Goldeen</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/119.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 119</p>
+                  <span class="card-title ">Seaking</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/120.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 120</p>
+                  <span class="card-title ">Staryu</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/121.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 121</p>
+                  <span class="card-title ">Starmie</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/122.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 122</p>
+                  <span class="card-title ">Mr. Mime</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/123.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 123</p>
+                  <span class="card-title ">Scyther</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/124.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 124</p>
+                  <span class="card-title ">Jynx</span>
+                  <span class="tagsize Ice ">Ice</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/125.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 125</p>
+                  <span class="card-title ">Electabuzz</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/126.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 126</p>
+                  <span class="card-title ">Magmar</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/127.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 127</p>
+                  <span class="card-title ">Pinsir</span>
+                  <span class="tagsize Bug ">Bug</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/128.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 128</p>
+                  <span class="card-title ">Tauros</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/129.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 129</p>
+                  <span class="card-title ">Magikarp</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/130.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 130</p>
+                  <span class="card-title ">Gyarados</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/131.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 131</p>
+                  <span class="card-title ">Lapras</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize Ice ">Ice</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/132.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 132</p>
+                  <span class="card-title ">Ditto</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/133.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 133</p>
+                  <span class="card-title ">Eevee</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/134.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 134</p>
+                  <span class="card-title ">Vaporeon</span>
+                  <span class="tagsize Water ">Water</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/135.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 135</p>
+                  <span class="card-title ">Jolteon</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/136.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 136</p>
+                  <span class="card-title ">Flareon</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/137.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 137</p>
+                  <span class="card-title ">Porygon</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/138.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 138</p>
+                  <span class="card-title ">Omanyte</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Water ">Water</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/139.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 139</p>
+                  <span class="card-title ">Omastar</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Water ">Water</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/140.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 140</p>
+                  <span class="card-title ">Kabuto</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Water ">Water</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/141.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 141</p>
+                  <span class="card-title ">Kabutops</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Water ">Water</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/142.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 142</p>
+                  <span class="card-title ">Aerodactyl</span>
+                  <span class="tagsize Rock ">Rock</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/143.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 143</p>
+                  <span class="card-title ">Snorlax</span>
+                  <span class="tagsize Normal ">Normal</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/144.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 144</p>
+                  <span class="card-title ">Articuno</span>
+                  <span class="tagsize Ice ">Ice</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/145.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 145</p>
+                  <span class="card-title ">Zapdos</span>
+                  <span class="tagsize Electric ">Electric</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/146.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 146</p>
+                  <span class="card-title ">Moltres</span>
+                  <span class="tagsize Fire ">Fire</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/147.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 147</p>
+                  <span class="card-title ">Dratini</span>
+                  <span class="tagsize Dragon ">Dragon</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/148.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 148</p>
+                  <span class="card-title ">Dragonair</span>
+                  <span class="tagsize Dragon ">Dragon</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/149.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 149</p>
+                  <span class="card-title ">Dragonite</span>
+                  <span class="tagsize Dragon ">Dragon</span>
+                  <span class="tagsize Flying ">Flying</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/150.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 150</p>
+                  <span class="card-title ">Mewtwo</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          
+            <div class="col s6 m3">
+              <div id="card1" class="card">
+                <div id="images" class="card-image responsive-img"> 
+                  <img class="img-pokemon responsive-img" src="./PokePedia_files/151.png">
+                </div>
+                <div class="card-content">
+                  <p class="pokenumber">Nº 151</p>
+                  <span class="card-title ">Mew</span>
+                  <span class="tagsize Psychic ">Psychic</span>
+                  <span class="tagsize undefined ">undefined</span>
+                </div>
+              </div>
+            </div> 
+          </div>
+            <div id="result-sum"></div>
+        </div>
+
+        <div class="row">
+            <div id="div-go-up" class="col s6 offset-s6">
+                <a class="waves-effect waves-light btn " href="http://127.0.0.1:5500/src/index.html#top"><i class="material-icons right">arrow_upward</i>Subir</a>
+            </div>
+        </div>
+
+    </div>
+    <!--2ºPantalla-->
+    <div id="second-page" style="display: block;">
+        <div class="container&gt;
+          &lt;div class=" row"="">
+            <div id="name-number" class="col s12 m12">
+              <div class="card-panel teal grey"><span class="white-text"><p class="flow-text">Beedrill Nº 015</p></span></div>
+            </div>
+          </div>
+        
+        <div class="container">
+        <div class="row">
+            <div class="col s12 m6">
+              <div class="card">
+                <div id="card-profile" class="card-image">
+                  <img class="responsive-img" src="./PokePedia_files/015(1).png" alt="pokemon bulbasaur">
+                </div>
+                <div id="card-type" class="card-action">
+                  <span class="white-text">
+                    <div id="textAPI"><p>Los Beedrill defienden su territorio a toda costa. No es
+conveniente acercarse a su colmena, por seguridad. Si se
+les molesta, todo un enjambre atacará ferozmente.</p></div><table id="table-type">
+                        <tbody><tr></tr>
+                    </tbody></table> 
+                  </span>   
+                </div>
+              </div>
+            </div>
+           <div class="col s12 m6">
+              <div class="card-panel teal grey center-align">
+                <span class="white-text">
+                  <h5 id="title-table-info-2ndpage">Información</h5><table id="table-info">
+                   <tbody><tr>
+                   </tr><tr></tr>
+                     <tr><th>ESPECIE</th>
+                     <td class="tables"><div id="pokemonSpecies"><p>Pokémon Abeja Veneno</p></div></td> 
+                   </tr>
+                   <tr>
+                     <th>TIEMPO APARICIÓN</th>
+                     <td class="tables">04:50 min </td> 
+                   </tr>
+                   <tr>
+                     <th>ALTURA</th>
+                     <td class="tables">0.99 m</td> 
+                   </tr>
+                   <tr>
+                     <th>PESO</th>
+                     <td class="tables">29.5 kg</td> 
+                   </tr>
+                   <tr>
+                     <th>EGGS</th>
+                     <td class="tables">Not in Eggs</td> 
+                   </tr>
+                   <tr>
+                     <th>HABITAT</th>
+                     <td class="tables"><div id="pokemonHabitat"><p>forest</p></div></td> 
+                   </tr>
+                   <tr>
+                     <th>TIPO</th>
+                     <td><div class="tagsizeOfType Bug">Bug</div> <div class="tagsizeOfType Poison">Poison</div></td>
+                   </tr> 
+                  </tbody></table>
+                </span>
+              </div>
+           </div> 
+
+           <div class="col s12 m6">
+            <div class="card-panel teal grey center-align">
+              <span class="white-text">
+               <h5 id="title-table-info-2ndpage">Debilidades</h5><table id="table-info">
+                  <tbody><tr>
+                    </tr><tr></tr>
+                    <tr><td><div class="tagsizeOfWeaknesses Fire">Fire</div> <div class="tagsizeOfWeaknesses Flying">Flying</div></td>
+                    <td><div class="tagsizeOfWeaknesses Psychic">Psychic</div> <div class="tagsizeOfWeaknesses Rock">Rock</div></td> 
+                    <td><div class="tagsizeOfWeaknesses undefined">undefined</div> <div class="tagsizeOfWeaknesses undefined">undefined</div></td>
+                  </tr> 
+               </tbody></table>
+              </span>
+            </div>
+           </div> 
+
+           <div class="col s12 m6">
+              <div id="card-panel" class="card-panel teal grey center-align">
+                <span class="white-text">
+                  <h5>Debilidades</h5><table id="table-weaknesses">
+                                   
+                   <tbody><tr>
+                     <td><div class="tagsizeOfWeaknesses Fire">Fire</div> 
+                     <div class="tagsizeOfWeaknesses Flying">Flying</div> 
+                     <div class="tagsizeOfWeaknesses Psychic">Psychic</div>
+                     <div class="tagsizeOfWeaknesses Rock">Rock</div> 
+                     <div class="tagsizeOfWeaknesses undefined">undefined</div> 
+                     <div class="tagsizeOfWeaknesses undefined">undefined</div>
+                     </td>
+                   </tr>
+                 </tbody></table>
+                </span>
+              </div>
+           </div>    
+          </div>
+            <div class="row">
+            <div id="btn-go-back">
+                <a href="http://127.0.0.1:5500/src/index.html" class="waves-effect waves-light btn">Volver al Inicio</a>
+            </div>
+            </div>
+        </div>  
+           
+        </div>
+    <!--Pantalla Calculadora-->
+    <section id="calculator-form">
+        <div class="container">
+            <div class="row">
+                <div id="form-pokemon" class="col s12 m6 offset- m3">
+                    <div id="calculator-text">
+                        <h5>Aquí podrás saber cuantos kilometros necesitas recorrer para evolucionar tu pokemon</h5>
+                    </div>
+                    <form id="my-form">
+                        <label class="text-calculator">¿Cuantos candys tienes?</label>
+                        <input type="text" id="number1" placeholder="Escribe un número">
+                        <br>
+                        <label class="text-calculator">¿Cuántos candys quieres conseguir ?</label>
+                        <input type="text" id="number2" placeholder="Escribe un número">
+                        <label class="text-calculator">Cantidad de Km que deber recorrer</label>
+                        <input type="text" id="result">
+                        <button type="button" id="result-btn" class="btn">Calcular</button>
+                        <button type="button" id="clear-btn" class="btn">Limpiar</button>
+                    </form>
+                </div>
+                <!--Pantalla Contacto menú-->
+                <div id="contact-form" class="col s12 m6 offset-m3">
+                    <form id="my-form2">
+                        <div class="row card-panel">
+                            <div class="input-field col s6">
+                                <input type="text" placeholder="Ingresa nombre" id="name" class="validate" required="">
+                                <label for="name" class="active">Nombre</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input type="text" id="lastname" class="validate" required="">
+                                <label for="lastname">Apellido</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input type="email" id="email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <textarea id="coments-area" cols="30" rows="10" placeholder="Dejanos tu comentario"></textarea>
+                            </div>
+                            <button class="btn" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Empieza el footer-->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Gracias por tu preferencia!</h5>
+                    <h6 class="grey-text text-lighten-4">Y no olvides visitar nuestras redes sociales</h6>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul id="social-media">
+                        <li><a class="grey-text text-lighten-3" href="http://www.facebook.com/" target="_blank"><i class="icon-facebook"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="http://www.twitter.com/" target="_blank"><i class="icon-twitter"></i></a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="http://www.instagram.com/" target="_blank"><i class="icon-unsplash"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright Text
+                <a id="space-footer" class="grey-text text-lighten-4 right" href="http://127.0.0.1:5500/src/index.html#!">Acerca de</a>
+                <a class="grey-text text-lighten-4 right" href="http://127.0.0.1:5500/src/index.html#!">Politica de privacidad</a>
+            </div>
+        </div>
+    </footer>
+    <div id="element"></div>
+    <div id="content1"></div>
+
+    <div id="root"></div>
+    <script src="./PokePedia_files/Chart.min.js"></script>
+    <script src="./PokePedia_files/materialize.min.js"></script>
+    <script src="./PokePedia_files/data.js"></script>
+    <script src="./PokePedia_files/main.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+<div class="sidenav-overlay"></div><div class="drag-target"></div></body></html>
