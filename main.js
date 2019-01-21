@@ -299,6 +299,7 @@ document.addEventListener("DOMContentLoaded", function(){
     data: {
     },
     onAutocomplete: function(texto){
+      document.getElementById("result-sum").innerHTML="";
       showPokemons(window.pokemones.searchPoke(allPokemon.pokemon, texto));
       clickOnImg(window.pokemones.searchPoke(allPokemon.pokemon, texto));
     }
