@@ -45,18 +45,18 @@ let pokemonImages = document.getElementsByClassName("img-pokemon");
 function clickOnImg (data) {
     for (let i = 0; i<pokemonImages.length; i++) {
       pokemonImages[i].addEventListener("click",() =>{
-        //api para el texto de cada pokemon 
+        //api para el texto,especie y habitat de cada pokemon 
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+data[i].id+"/")
         .then(newData => newData.json() )
         .then(newData => {
           console.log(newData);
-              let element = document.getElementById("textAPI"); 
-              let element1 = document.getElementById("pokemonSpecies");
-              let element2 = document.getElementById("pokemonHabitat");
-        //esta funcion fiñter corresponde a otro objeto (api) y filtra el idioma 
-               element.innerHTML += `<p>${window.api.filterData(newData.flavor_text_entries)[0].flavor_text}</p>`  
-               element1.innerHTML += `<p>${window.api.filterData(newData.genera)[0].genus}</p>`  
-               element2.innerHTML += `<p>${newData.habitat.name}</p>`  
+              //let element = document.getElementById("textAPI"); 
+              //let element1 = document.getElementById("pokemonSpecies");
+              //let element2 = document.getElementById("pokemonHabitat");
+        //esta funcion filter corresponde a otro objeto (api) y filtra el idioma 
+        document.getElementById("textAPI").innerHTML += `<p>${window.api.filterData(newData.flavor_text_entries)[0].flavor_text}</p>`  
+        document.getElementById("pokemonSpecies").innerHTML += `<p>${window.api.filterData(newData.genera)[0].genus}</p>`  
+        document.getElementById("pokemonHabitat").innerHTML += `<p>${newData.habitat.name}</p>`  
       })  
         document.getElementById("first-page").style.display="none";
         document.getElementById("second-page").style.display="block";
@@ -78,67 +78,63 @@ function clickOnImg (data) {
                 <div id="card-type" class="card-action">
                   <span class="white-text" >
                     <table  id="table-type">
-                        <tr>
-                          <td><p>Especie</p></td>
-                          <td><div id="pokemonSpecies"></div></td>
-                        </tr>  
-                        <tr>
-                          <td><p>Tipo</p></td>
-                          <td><div class="tagsizeOfType ${data[i].type[0]}">${data[i].type[0]}</div> <div class="tagsizeOfType ${data[i].type[1]}">${data[i].type[1]}</div></td>
-                        </tr>
-                        <tr>
-                        <td><p>Habitat</p></td>
-                        <td><div id="pokemonHabitat"></div></td>
-                      </tr>
+                        <tr><div id="textAPI"></div></tr>
                     </table> 
                   </span>   
                 </div>
               </div>
             </div>
            <div class="col s12 m6" >
-              <div id="textAPI"></div>
               <div class="card-panel teal grey center-align">
                 <span class="white-text" >
                   <table  id="table-info">
                    <tr>
-                     <th>TIEMPO APARICIÓN</td>
-                     <th>ALTURA</td>
+                   <tr><h5 id="title-table-info-2ndpage">Información</h5></tr>
+                     <th>ESPECIE</th>
+                     <td class="tables"><div id="pokemonSpecies"></div></div></td> 
                    </tr>
                    <tr>
-                     <td class="tables">${data[i].spawn_time} min </td>
-                     <td class="tables">${data[i].height}</td>
+                     <th>TIEMPO APARICIÓN</th>
+                     <td class="tables">${data[i].spawn_time} min </td> 
+                   </tr>
+                   <tr>
+                     <th>ALTURA</th>
+                     <td class="tables">${data[i].height}</td> 
                    </tr>
                    <tr>
                      <th>PESO</th>
-                     <th>EGG</th>
+                     <td class="tables">${data[i].weight}</td> 
                    </tr>
                    <tr>
-                     <td class="tables">${data[i].weight}</td>
-                     <td class="tables">${data[i].egg}</td>
+                     <th>EGGS</th>
+                     <td class="tables">${data[i].egg}</td> 
                    </tr>
+                   <tr>
+                     <th>HABITAT</th>
+                     <td class="tables"><div id="pokemonHabitat"></div></td> 
+                   </tr>
+                   <tr>
+                     <th>TIPO</th>
+                     <td><div class="tagsizeOfType ${data[i].type[0]}">${data[i].type[0]}</div> <div class="tagsizeOfType ${data[i].type[1]}">${data[i].type[1]}</div></td>
+                   </tr> 
                   </table>
                 </span>
               </div>
            </div> 
+
            <div class="col s12 m6" >
-              <div id="card-panel" class="card-panel teal grey center-align">
-                <span class="white-text" >
-                  <table id="table-weaknesses">
-                    <h5>Debilidades</h5>               
-                   <tr>
-                     <td ><div class="tagsizeOfWeaknesses ${data[i].weaknesses[0]}">${data[i].weaknesses[0]}</div> 
-                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[1]}">${data[i].weaknesses[1]}</div> 
-                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[2]}">${data[i].weaknesses[2]}</div>
-                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[3]}">${data[i].weaknesses[3]}</div> 
-                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[4]}">${data[i].weaknesses[4]}</div> 
-                     <div class="tagsizeOfWeaknesses ${data[i].weaknesses[5]}">${data[i].weaknesses[5]}</div>
-                     </td>
-                   </tr>
-                 </table>
-                </span>
-              </div>
-           </div>    
-          </div>
+            <div class="card-panel teal grey center-align">
+              <span class="white-text" >
+               <table  id="table-weaknesses">
+                  <tr>
+                    <tr><h5 id="title-table-info-2ndpage">Debilidades</h5></tr>
+                    <td><div class="tagsizeOfWeaknesses ${data[i].weaknesses[0]}">${data[i].weaknesses[0]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[2]}">${data[i].weaknesses[2]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[4]}">${data[i].weaknesses[4]}</div></td>
+                    <td><div class="tagsizeOfWeaknesses ${data[i].weaknesses[1]}">${data[i].weaknesses[1]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[3]}">${data[i].weaknesses[3]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[5]}">${data[i].weaknesses[5]}</div></td> 
+                  </tr> 
+               </table>
+              </span>
+            </div>
+           </div> 
             <div class="row">
             <div id="btn-go-back">
                 <a href="" class="waves-effect waves-light btn">Volver al Inicio</a>
