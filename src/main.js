@@ -45,6 +45,14 @@ let pokemonImages = document.getElementsByClassName("img-pokemon");
 function clickOnImg (data) {
     for (let i = 0; i<pokemonImages.length; i++) {
       pokemonImages[i].addEventListener("click",() =>{
+      //   //api para las fortalezas
+      //   fetch("https://pokeapi.co/api/v2/type/")
+      //   .then(newData => newData.json() )
+      //   .then(newData => {
+      //     console.log(newData);
+
+      //   document.getElementById("FORTALEZA").innerHTML += `<p>${window.api.filterData1(newData.results)[0].name}</p>`    
+      // })  
         //api para el texto,especie y habitat de cada pokemon 
         fetch("https://pokeapi.co/api/v2/pokemon-species/"+data[i].id+"/")
         .then(newData => newData.json() )
@@ -127,7 +135,7 @@ function clickOnImg (data) {
               <span class="white-text" >
                <table  id="table-weaknesses">
                   <tr>
-                    <tr><h5 id="title-table-info-2ndpage">Debilidades</h5></tr>
+                    <td><h5 id="title-table-info-2ndpage">Debilidades</h5></td>
                     <td><div class="tagsizeOfWeaknesses ${data[i].weaknesses[0]}">${data[i].weaknesses[0]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[2]}">${data[i].weaknesses[2]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[4]}">${data[i].weaknesses[4]}</div></td>
                     <td><div class="tagsizeOfWeaknesses ${data[i].weaknesses[1]}">${data[i].weaknesses[1]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[3]}">${data[i].weaknesses[3]}</div> <div class="tagsizeOfWeaknesses ${data[i].weaknesses[5]}">${data[i].weaknesses[5]}</div></td> 
                   </tr> 

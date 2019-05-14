@@ -88,12 +88,5 @@ window.api = {
       return entries.language.name === "es" ;
     })
     return langFilter 
-   },
-   filterData1: (data) => {
-     const dataPokemon = data;
-     const typeFilter = dataPokemon.filter(entries => {
-      return entries.name === "normal"
-     }) 
-     return typeFilter
    }
 }
